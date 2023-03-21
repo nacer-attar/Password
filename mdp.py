@@ -1,13 +1,10 @@
 import re
 import hashlib
-import json
 
 def mdp101():
     
-    mdp = input ("Veuillez saisir un Mot de Passe : ")
-    mdp_check = False
-    while mdp_check == False :
-
+    while True :
+        mdp = input ("Veuillez saisir un Mot de Passe : ")
         if not (len(mdp) >= 8):
             print ("Le mot de passe doit contenir au moins 8 caractères.")
         elif not re.search ("[A-Z]" , mdp):
@@ -15,7 +12,7 @@ def mdp101():
         elif not re.search ("[a-z]" , mdp):
             print ("le mot de passe doit contenir au moins une minuscule.")
         elif not re.search ("[0-9]" , mdp):
-            print ("le mot de passe doit contenir au moins une minuscule.")
+            print ("le mot de passe doit contenir au moins un chiffre.")
         elif not re.search ("[?!@#$%^&*]", mdp):
             print ("le mot de passe doit contenir au moins un caractère spécial.")
         else :
